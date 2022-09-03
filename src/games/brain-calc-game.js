@@ -6,8 +6,8 @@ const calc = () => {
     let i = 0;
     while (i < 3) {
       i += 1;
-      const firstNumber = getRandomFloat(1, 25);
-      const secondNumber = getRandomFloat(1, 25);
+      const firstNumber = getRandomFloat(1, 100);
+      const secondNumber = getRandomFloat(1, 100);
       const getOperators = getRandomFloat(1, 4);
       let correctResult;
   
