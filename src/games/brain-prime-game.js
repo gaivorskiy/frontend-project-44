@@ -13,7 +13,7 @@ const prime = () => {
           if (n % i !== 0 && i <= n) {
            result = 'yes'; 
           } else if (n % i === 0 && i < n) {
-           return result = 'no';
+          result = 'no';
           }
         }
         return result
