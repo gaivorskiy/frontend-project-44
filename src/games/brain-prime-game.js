@@ -9,12 +9,15 @@ const prime = () => {
       const getNumber = getRandomFloat(1, 100);
       const primeNumber = (n) => {
         let result;
-        for (let i = 0; n > i; i +=1) {
-          if (n % i !== 0 && i <= n) {
-           result = 'yes'; 
-          } else if (n % i === 0 && i < n) {
-          result = 'no';
-          }
+        if (n === 1) {
+            return result = 'yes';
+        }
+        for (let i = 2; n > i; i +=1) {
+            if (n % i !== 0) {
+            result = 'yes'; 
+            } else if (n % i === 0) {
+            return result = 'no';
+            }
         }
         return result
       };
