@@ -8,7 +8,7 @@ const progression = () => {
       i += 1;
       let mass = '';
       let startNumber = getRandomFloat(1, 9);
-      let multiplier = getRandomFloat(1, 9);
+      let multiplier = getRandomFloat(5, 9);
       let getRandomDots = getRandomFloat(0, 10);
       let quantity = 10;
       let j = 0;
