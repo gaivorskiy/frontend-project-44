@@ -16,12 +16,12 @@ const gcd = () => {
         let whoMax;
         let whoMin;
         
-        for(let i = 2; num >= i; i += 1) {
+        for(let i = 0; num >= i; i += 1) {
           if (num % i === 0) {
           resultOne.push(i);
           }
         }
-        for(let i = 2; num1 >= i; i += 1) {
+        for(let i = 0; num1 >= i; i += 1) {
           if (num1 % i === 0) {
           resultTwo.push(i);
           }
