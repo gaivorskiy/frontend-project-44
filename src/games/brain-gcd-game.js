@@ -35,10 +35,13 @@ const gcd = () => {
         }
         
         for (let i = 0; whoMax.length > i; i += 1) {
-          if (whoMax[i] === whoMin[i] && whoMax !== undefined) {
-            resultFinal = whoMax[i];
+          for (let j = 0; whoMin.length > j; j += 1 ) {
+              if ( whoMax[i] === whoMin[j]) {
+                resultFinal = whoMax[i];
+              }
+            }
           }
-        }
+          
         return resultFinal;
       };
 
