@@ -1,7 +1,14 @@
 #!/usr/bin/env node
+import {engine, engineCheck, returnGame} from '../src/index.js';
+import {question, answer} from '../src/games/brain-progression-game.js';
 
-import progression from '../src/games/brain-progression-game.js';
-
-console.log('What number is missing in the progression?');
-
-progression();
+const description = 'brain-progression';
+engine(description);
+let i = 0;
+while (i < 3) {
+    i += 1;
+    engineCheck(question(), answer, i);
+    if (returnGame === false) {
+        break;
+    }
+};

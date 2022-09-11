@@ -1,8 +1,15 @@
 #!/usr/bin/env node
 
-import even from '../src/games/brain-even-game.js';
-import {userName, userHello} from '../src/index.js';
+import {engine, engineCheck, returnGame} from '../src/index.js';
+import {question, answer} from '../src/games/brain-even-game.js';
 
-console.log('Answer \"yes\" if the number is even, otherwise answer \"no\".')
-
-even();
+const description = 'brain-even';
+engine(description);
+let i = 0;
+while (i < 3) {
+    i += 1;
+    engineCheck(question(), answer, i);
+    if (returnGame === false) {
+        break;
+    }
+};
