@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-let userName;
+export let userName;
 export const engine = (description) => {
 
 userName = readlineSync.question('Welcome to the Brain Games!\nMay I have your name?: ');
@@ -11,6 +11,10 @@ if (description === 'brain-calc') {
     console.log('Answer \"yes\" if the number is even, otherwise answer \"no\".');
   } else if (description === 'brain-gcd') {
     console.log('Find the greatest common divisor of given numbers.');
+  } else if (description === 'brain-prime') {
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  } else if (description === 'brain-progression') {
+    console.log('What number is missing in the progression?');
   }
 
 };
