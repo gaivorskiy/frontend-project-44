@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import getRandomFloat from '../getRandomFloat.js';
 
 export let answer;
@@ -7,20 +6,20 @@ export const question = () => {
   const secondNumber = getRandomFloat(1, 100);
 
   const checkAnswer = (num, num1) => {
-    let resultOne = [];
-    let resultTwo = [];
+    const resultOne = [];
+    const resultTwo = [];
     let resultFinal = 0;
     let whoMax;
     let whoMin;
-    
-    for(let i = 0; num >= i; i += 1) {
+
+    for (let i = 0; num >= i; i += 1) {
       if (num % i === 0) {
-      resultOne.push(i);
+        resultOne.push(i);
       }
     }
-    for(let i = 0; num1 >= i; i += 1) {
+    for (let i = 0; num1 >= i; i += 1) {
       if (num1 % i === 0) {
-      resultTwo.push(i);
+        resultTwo.push(i);
       }
     }
     if (resultOne.length >= resultTwo.length) {
@@ -30,14 +29,14 @@ export const question = () => {
       whoMin = resultOne;
       whoMax = resultTwo;
     }
-    
+
     for (let i = 0; whoMax.length > i; i += 1) {
-      for (let j = 0; whoMin.length > j; j += 1 ) {
-          if ( whoMax[i] === whoMin[j]) {
-            resultFinal = whoMax[i];
-          }
+      for (let j = 0; whoMin.length > j; j += 1) {
+        if (whoMax[i] === whoMin[j]) {
+          resultFinal = whoMax[i];
         }
-      };
+      }
+    }
     return resultFinal;
   };
   answer = checkAnswer(firstNumber, secondNumber);
