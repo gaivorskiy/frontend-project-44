@@ -39,7 +39,7 @@ export const question = () => {
     }
     return resultFinal;
   };
-  answer = checkAnswer(firstNumber, secondNumber);
+  answer = String(checkAnswer(firstNumber, secondNumber));
   return `Question: ${firstNumber} ${secondNumber}`;
 };
 question();
