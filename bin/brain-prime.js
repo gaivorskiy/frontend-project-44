@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { engine, engineCheck, returnGame } from '../src/index';
-import { question, answer } from '../src/games/brain-prime-game';
+import { engine, engineCheck, returnGame } from '../src/index.js';
+import { question, answer } from '../src/games/brain-prime-game.js';
 
 const description = 'brain-prime';
 engine(description);

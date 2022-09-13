@@ -1,4 +1,4 @@
-import getRandomFloat from '../getRandomFloat';
+import getRandomFloat from '../getRandomFloat.js';
 
 export let answer;
 export const question = () => {
