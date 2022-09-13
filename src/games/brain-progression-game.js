@@ -23,7 +23,7 @@ export const question = () => {
     }
     j += 1;
   }
-  answer = correctResult;
+  answer = String(correctResult);
   return `Question:${mass}`;
 };
 question();
