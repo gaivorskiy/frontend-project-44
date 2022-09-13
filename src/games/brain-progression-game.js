@@ -1,4 +1,4 @@
-import getRandomFloat from '../getRandomFloat.js';
+import getRandomFloat from '../getRandomFloat';
 
 export let answer;
 export const question = () => {
@@ -21,7 +21,7 @@ export const question = () => {
       startNumber += multiplier;
       mass += ` ${getStartNumber}`;
     }
-    j++;
+    j += 1;
   }
   answer = correctResult;
   return `Question:${mass}`;

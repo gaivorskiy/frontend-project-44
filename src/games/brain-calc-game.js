@@ -1,6 +1,6 @@
 import getRandomFloat from '../getRandomFloat.js';
 
-export let answer = 0;
+export let answer;
 export const question = () => {
   const firstNumber = getRandomFloat(1, 100);
   const secondNumber = getRandomFloat(1, 100);
@@ -12,17 +12,17 @@ export const question = () => {
 
   if (getOperators === 1) {
     const [getQuestion, getAnswer] = a;
-    answer = getAnswer;
+    answer = String(getAnswer);
     return `Question: ${getQuestion}`;
   }
   if (getOperators === 2) {
     const [getQuestion, getAnswer] = b;
-    answer = getAnswer;
+    answer = String(getAnswer);
     return `Question: ${getQuestion}`;
   }
   if (getOperators === 3) {
     const [getQuestion, getAnswer] = c;
-    answer = getAnswer;
+    answer = String(getAnswer);
     return `Question: ${getQuestion}`;
   }
 };
