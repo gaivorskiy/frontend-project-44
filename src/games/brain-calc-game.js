@@ -1,7 +1,8 @@
 import getRandomFloat from '../getRandomFloat.js';
-
-export let answer;
-export const question = () => {
+import { engine, engineCheck, returnGame } from '../index.js';
+const calc = () => {
+  let answer;
+  const question = () => {
   const firstNumber = getRandomFloat(1, 100);
   const secondNumber = getRandomFloat(1, 100);
   const getOperators = getRandomFloat(1, 4);
@@ -26,4 +27,18 @@ export const question = () => {
     return `Question: ${getQuestion}`;
   }
 };
-question();
+
+const description = 'brain-calc';
+engine(description);
+let i = 0;
+while (i < 3) {
+  i += 1;
+  engineCheck(question(), answer, i);
+  if (returnGame === false) {
+    break;
+  }
+}
+
+};
+calc();
+export default calc;
