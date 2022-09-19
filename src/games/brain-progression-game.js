@@ -29,7 +29,6 @@ const progression = () => {
     return `Question:${mass}`;
   };
 
-
   const description = 'brain-progression';
   engine(description);
   question();
@@ -42,5 +41,4 @@ const progression = () => {
     }
   }
 };
-progression();
 export default progression;

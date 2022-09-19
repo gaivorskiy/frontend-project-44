@@ -1,8 +1,9 @@
 import getRandomFloat from '../getRandomFloat.js';
 import { engine, engineCheck, returnGame } from '../index.js';
+
 const gcd = () => {
-    let answer;
-    const question = () => {
+  let answer;
+  const question = () => {
     const firstNumber = getRandomFloat(1, 100);
     const secondNumber = getRandomFloat(1, 100);
 
@@ -53,8 +54,7 @@ const gcd = () => {
     engineCheck(question(), answer, i);
     if (returnGame === false) {
       break;
-      }
     }
+  }
 };
-gcd();
 export default gcd;

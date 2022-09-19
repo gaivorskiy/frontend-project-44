@@ -5,7 +5,7 @@ export const engine = (description) => {
   userName = readlineSync.question(
     'Welcome to the Brain Games!\nMay I have your name?: ',
   );
-  const userHello = console.log(`Hello, ${userName}!`);
+  console.log(`Hello, ${userName}!`);
   if (description === 'brain-calc') {
     console.log('What is the result of the expression?');
   } else if (description === 'brain-even') {

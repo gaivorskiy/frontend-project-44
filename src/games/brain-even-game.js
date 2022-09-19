@@ -1,5 +1,6 @@
 import getRandomFloat from '../getRandomFloat.js';
 import { engine, engineCheck, returnGame } from '../index.js';
+
 const even = () => {
   let answer;
   const question = () => {
@@ -25,5 +26,4 @@ const even = () => {
     }
   }
 };
-even();
 export default even;

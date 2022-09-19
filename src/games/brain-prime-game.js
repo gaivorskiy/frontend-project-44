@@ -1,5 +1,6 @@
 import getRandomFloat from '../getRandomFloat.js';
 import { engine, engineCheck, returnGame } from '../index.js';
+
 const prime = () => {
   let answer;
   const question = () => {
@@ -7,13 +8,15 @@ const prime = () => {
     const primeNumber = (n) => {
       let result;
       if (n === 1) {
-        return (result = 'yes');
+        result = 'yes';
+        return;
       }
       for (let i = 2; n > i; i += 1) {
         if (n % i !== 0) {
           result = 'yes';
         } else if (n % i === 0) {
-          return (result = 'no');
+          result = 'no';
+          return;
         }
       }
       return result;
@@ -34,5 +37,4 @@ const prime = () => {
     }
   }
 };
-prime();
 export default prime;
