@@ -4,22 +4,26 @@ import { engine, engineCheck, returnGame } from '../index.js';
 const prime = () => {
   let answer;
   const question = () => {
-    const getNumber = getRandomFloat(1, 100);
-    const primeNumber = (n) => {
-      let result;
+    // const getNumber = getRandomFloat(1, 100);
+    const getNumber = 96;
+    function primeNumber(n) {
+      let result = '';
       if (n === 1) {
         result = 'no';
+        return result;
       }
       for (let i = 2; i <= Math.sqrt(n); i += 1) {
         if (n % i !== 0) {
           result = 'yes';
+          return result;
         }
         if (n % i === 0) {
           result = 'no';
+          return result;
         }
       }
       return result;
-    };
+    }
     answer = primeNumber(getNumber);
     const resultQuestion = `Question: ${getNumber}`;
     return resultQuestion;
