@@ -8,9 +8,9 @@ const prime = () => {
     const primeNumber = (n) => {
       let result;
       if (n === 1) {
-        return (result = 'yes');
+        return (result = 'no');
       }
-      for (let i = 2; n > i; i += 1) {
+      for (let i = 2; i <= Math.sqrt(n); i += 1) {
         if (n % i !== 0) {
           return (result = 'yes');
         }
