@@ -4,8 +4,7 @@ import { engine, engineCheck, returnGame } from '../index.js';
 const prime = () => {
   let answer;
   const question = () => {
-    // const getNumber = getRandomFloat(1, 100);
-    const getNumber = 96;
+    const getNumber = getRandomFloat(1, 100);
     function primeNumber(n) {
       let result = '';
       if (n === 1) {
