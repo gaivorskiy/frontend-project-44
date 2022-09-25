@@ -4,6 +4,7 @@ import { engine, engineCheck, returnGame } from '../index.js';
 const calc = () => {
   let answer;
   const question = () => {
+    let resultQuestion;
     const firstNumber = getRandomFloat(1, 100);
     const secondNumber = getRandomFloat(1, 100);
     const getOperators = getRandomFloat(1, 4);
@@ -15,18 +16,19 @@ const calc = () => {
     if (getOperators === 1) {
       const [getQuestion, getAnswer] = a;
       answer = String(getAnswer);
-      return `Question: ${getQuestion}`;
+      resultQuestion = `Question: ${getQuestion}`;
     }
     if (getOperators === 2) {
       const [getQuestion, getAnswer] = b;
       answer = String(getAnswer);
-      return `Question: ${getQuestion}`;
+      resultQuestion = `Question: ${getQuestion}`;
     }
     if (getOperators === 3) {
       const [getQuestion, getAnswer] = c;
       answer = String(getAnswer);
-      return `Question: ${getQuestion}`;
+      resultQuestion = `Question: ${getQuestion}`;
     }
+    return resultQuestion;
   };
 
   const description = 'brain-calc';

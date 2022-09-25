@@ -8,19 +8,21 @@ const prime = () => {
     const primeNumber = (n) => {
       let result;
       if (n === 1) {
-        return (result = 'no');
+        result = 'no';
       }
       for (let i = 2; i <= Math.sqrt(n); i += 1) {
         if (n % i !== 0) {
-          return (result = 'yes');
+          result = 'yes';
         }
         if (n % i === 0) {
-          return (result = 'no');
+          result = 'no';
         }
       }
+      return result;
     };
     answer = primeNumber(getNumber);
-    return `Question: ${getNumber}`;
+    const resultQuestion = `Question: ${getNumber}`;
+    return resultQuestion;
   };
 
   const description = 'brain-prime';
