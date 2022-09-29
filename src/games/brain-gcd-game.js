@@ -1,8 +1,9 @@
 import getRandomFloat from '../getRandomFloat.js';
-import { engine, engineCheck, returnGame } from '../index.js';
+import engine from '../index.js';
 
 const gcd = () => {
-  let answer;
+  const answer = [];
+  const getQuestion = [];
   const question = () => {
     const firstNumber = getRandomFloat(1, 100);
     const secondNumber = getRandomFloat(1, 100);
@@ -41,20 +42,16 @@ const gcd = () => {
       }
       return resultFinal;
     };
-    answer = String(checkAnswer(firstNumber, secondNumber));
-    return `Question: ${firstNumber} ${secondNumber}`;
+    answer.push(String(checkAnswer(firstNumber, secondNumber)));
+    const getQuestion = `Question: ${firstNumber} ${secondNumber}`
+    return getQuestion;
   };
-
-  const description = 'brain-gcd';
-  engine(description);
-  question();
   let i = 0;
   while (i < 3) {
     i += 1;
-    engineCheck(question(), answer, i);
-    if (returnGame === false) {
-      break;
-    }
+    getQuestion.push(question());
   }
+  const description = 'brain-gcd';
+  engine(description, getQuestion, answer);
 };
 export default gcd;

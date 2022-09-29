@@ -1,8 +1,9 @@
 import getRandomFloat from '../getRandomFloat.js';
-import { engine, engineCheck, returnGame } from '../index.js';
+import engine from '../index.js';
 
 const progression = () => {
-  let answer;
+  const answer = [];
+  const getQuestion = [];
   const question = () => {
     let mass = '';
     let startNumber = getRandomFloat(1, 9);
@@ -25,20 +26,16 @@ const progression = () => {
       }
       j += 1;
     }
-    answer = String(correctResult);
-    return `Question:${mass}`;
+    answer.push(String(correctResult));
+    const getThisQuestion = `Question:${mass}`;
+    return getThisQuestion;
   };
-
-  const description = 'brain-progression';
-  engine(description);
-  question();
   let i = 0;
   while (i < 3) {
     i += 1;
-    engineCheck(question(), answer, i);
-    if (returnGame === false) {
-      break;
-    }
+    getQuestion.push(question());
   }
+  const description = 'brain-progression';
+  engine(description, getQuestion, answer);
 };
 export default progression;

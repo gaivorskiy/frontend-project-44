@@ -1,8 +1,9 @@
 import getRandomFloat from '../getRandomFloat.js';
-import { engine, engineCheck, returnGame } from '../index.js';
+import engine from '../index.js';
 
 const prime = () => {
-  let answer;
+  const answer = [];
+  const getQuestion = [];
   const question = () => {
     const getNumber = getRandomFloat(1, 100);
     function primeNumber(n) {
@@ -22,21 +23,16 @@ const prime = () => {
       }
       return result;
     }
-    answer = primeNumber(getNumber);
+    answer.push(primeNumber(getNumber));
     const resultQuestion = `Question: ${getNumber}`;
     return resultQuestion;
   };
-
-  const description = 'brain-prime';
-  engine(description);
-  question();
   let i = 0;
   while (i < 3) {
     i += 1;
-    engineCheck(question(), answer, i);
-    if (returnGame === false) {
-      break;
-    }
+    getQuestion.push(question());
   }
+  const description = 'brain-prime';
+  engine(description, getQuestion, answer);
 };
 export default prime;

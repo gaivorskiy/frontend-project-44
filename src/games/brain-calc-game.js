@@ -1,8 +1,9 @@
 import getRandomFloat from '../getRandomFloat.js';
-import { engine, engineCheck, returnGame } from '../index.js';
+import engine from '../index.js';
 
 const calc = () => {
-  let answer;
+  const answer = [];
+  const getQuestion = [];
   const question = () => {
     let resultQuestion;
     const firstNumber = getRandomFloat(1, 100);
@@ -14,32 +15,28 @@ const calc = () => {
     const c = [`${firstNumber} * ${secondNumber}`, firstNumber * secondNumber];
 
     if (getOperators === 1) {
-      const [getQuestion, getAnswer] = a;
-      answer = String(getAnswer);
-      resultQuestion = `Question: ${getQuestion}`;
+      const [getThisQuestion, getAnswer] = a;
+      answer.push(String(getAnswer));
+      resultQuestion = `Question: ${getThisQuestion}`;
     }
     if (getOperators === 2) {
-      const [getQuestion, getAnswer] = b;
-      answer = String(getAnswer);
-      resultQuestion = `Question: ${getQuestion}`;
+      const [getThisQuestion, getAnswer] = b;
+      answer.push(String(getAnswer));
+      resultQuestion = `Question: ${getThisQuestion}`;
     }
     if (getOperators === 3) {
-      const [getQuestion, getAnswer] = c;
-      answer = String(getAnswer);
-      resultQuestion = `Question: ${getQuestion}`;
+      const [getThisQuestion, getAnswer] = c;
+      answer.push(String(getAnswer));
+      resultQuestion = `Question: ${getThisQuestion}`;
     }
     return resultQuestion;
   };
-
-  const description = 'brain-calc';
-  engine(description);
   let i = 0;
   while (i < 3) {
     i += 1;
-    engineCheck(question(), answer, i);
-    if (returnGame === false) {
-      break;
-    }
+    getQuestion.push(question());
   }
+  const description = 'brain-calc';
+  engine(description, getQuestion, answer);
 };
 export default calc;
