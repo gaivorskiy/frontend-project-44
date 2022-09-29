@@ -43,8 +43,8 @@ const gcd = () => {
       return resultFinal;
     };
     answer.push(String(checkAnswer(firstNumber, secondNumber)));
-    const getQuestion = `Question: ${firstNumber} ${secondNumber}`
-    return getQuestion;
+    const getThisQuestion = `Question: ${firstNumber} ${secondNumber}`;
+    return getThisQuestion;
   };
   let i = 0;
   while (i < 3) {
