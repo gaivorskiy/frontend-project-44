@@ -1,13 +1,12 @@
-import getRandomFloat from '../getRandomFloat.js';
+import getRandomNumber from '../getRandomNumber.js';
 import engine from '../index.js';
 
-const even = () => {
+const runEven = () => {
   const answer = [];
-  const getQuestion = [];
-  const question = () => {
+  const getQuestion = () => {
     const answerNo = 'no';
     const answerYes = 'yes';
-    const randomNumber = getRandomFloat(1, 9);
+    const randomNumber = getRandomNumber(1, 9);
 
     if (randomNumber % 2 === 0) {
       answer.push(answerYes);
@@ -17,12 +16,7 @@ const even = () => {
     const resultQuestion = `Question: ${randomNumber}`;
     return resultQuestion;
   };
-  let i = 0;
-  while (i < 3) {
-    i += 1;
-    getQuestion.push(question());
-  }
-  const description = 'brain-even';
+  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
   engine(description, getQuestion, answer);
 };
-export default even;
+export default runEven;

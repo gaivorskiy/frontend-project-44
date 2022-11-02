@@ -1,11 +1,10 @@
-import getRandomFloat from '../getRandomFloat.js';
+import getRandomNumber from '../getRandomNumber.js';
 import engine from '../index.js';
 
-const prime = () => {
+const runPrime = () => {
   const answer = [];
-  const getQuestion = [];
-  const question = () => {
-    const getNumber = getRandomFloat(1, 100);
+  const getQuestion = () => {
+    const getNumber = getRandomNumber(1, 100);
     function primeNumber(n) {
       let result = '';
       if (n === 1) {
@@ -27,12 +26,7 @@ const prime = () => {
     const resultQuestion = `Question: ${getNumber}`;
     return resultQuestion;
   };
-  let i = 0;
-  while (i < 3) {
-    i += 1;
-    getQuestion.push(question());
-  }
-  const description = 'brain-prime';
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   engine(description, getQuestion, answer);
 };
-export default prime;
+export default runPrime;

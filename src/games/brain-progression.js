@@ -1,14 +1,13 @@
-import getRandomFloat from '../getRandomFloat.js';
+import getRandomNumber from '../getRandomNumber.js';
 import engine from '../index.js';
 
-const progression = () => {
+const runProgression = () => {
   const answer = [];
-  const getQuestion = [];
-  const question = () => {
+  const getQuestion = () => {
     let mass = '';
-    let startNumber = getRandomFloat(1, 9);
-    const multiplier = getRandomFloat(1, 9);
-    const getRandomDots = getRandomFloat(0, 10);
+    let startNumber = getRandomNumber(1, 9);
+    const multiplier = getRandomNumber(1, 9);
+    const getRandomDots = getRandomNumber(0, 10);
     const quantity = 10;
     let j = 0;
     let correctResult;
@@ -30,12 +29,7 @@ const progression = () => {
     const getThisQuestion = `Question:${mass}`;
     return getThisQuestion;
   };
-  let i = 0;
-  while (i < 3) {
-    i += 1;
-    getQuestion.push(question());
-  }
-  const description = 'brain-progression';
+  const description = 'What number is missing in the progression?';
   engine(description, getQuestion, answer);
 };
-export default progression;
+export default runProgression;
