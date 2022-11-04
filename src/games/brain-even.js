@@ -7,12 +7,8 @@ const runEven = () => {
     const answerNo = 'no';
     const answerYes = 'yes';
     const randomNumber = getRandomNumber(1, 9);
-
-    if (randomNumber % 2 === 0) {
-      answer.push(answerYes);
-    } else if (randomNumber % 2 !== 0) {
-      answer.push(answerNo);
-    }
+    const evenNumber = (num) => num % 2 === 0;
+    answer.push(evenNumber(randomNumber) ? answerYes : answerNo);
     const resultQuestion = `Question: ${randomNumber}`;
     return resultQuestion;
   };

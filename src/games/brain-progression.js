@@ -4,26 +4,27 @@ import engine from '../index.js';
 const runProgression = () => {
   const answer = [];
   const getQuestion = () => {
-    let mass = '';
-    let startNumber = getRandomNumber(1, 9);
-    const multiplier = getRandomNumber(1, 9);
-    const getRandomDots = getRandomNumber(0, 10);
-    const quantity = 10;
-    let j = 0;
-    let correctResult;
-
-    while (j < quantity) {
-      const getStartNumber = startNumber;
-      if (getRandomDots === j) {
-        mass += ' ';
-        correctResult = startNumber;
-        startNumber += multiplier;
-        mass += '..';
-      } else if (getRandomDots !== j) {
-        startNumber += multiplier;
-        mass += ` ${getStartNumber}`;
+    const getProgression = () => {
+      const mass = [];
+      let startNumber = getRandomNumber(1, 9);
+      const multiplier = getRandomNumber(1, 9);
+      const quantity = 10;
+      for (let i = 0; i < quantity; i += 1) {
+        if (i === 0) {
+          mass.push(startNumber);
+        } else if (i !== 0) {
+          startNumber += multiplier;
+          mass.push(startNumber);
+        }
       }
-      j += 1;
+      return mass;
+    };
+    const massProgression = getProgression();
+    const getRandomDots = getRandomNumber(0, 10);
+    const correctResult = massProgression[getRandomDots];
+    let mass = '';
+    for (let i = 0; i < massProgression.length; i += 1) {
+      const replacingWithDots = (i !== getRandomDots) ? mass += ` ${massProgression[i]}` : mass += ' ..';
     }
     answer.push(String(correctResult));
     const getThisQuestion = `Question:${mass}`;
