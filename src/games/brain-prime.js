@@ -11,6 +11,10 @@ const runPrime = () => {
         result = 'no';
         return result;
       }
+      if (n <= 3) {
+        result = 'yes';
+        return result;
+      }
       for (let i = 2; i <= Math.sqrt(n); i += 1) {
         const checkOnRemains = (num) => num % i !== 0;
         result = (checkOnRemains(n) === true) ? 'yes' : 'no';
