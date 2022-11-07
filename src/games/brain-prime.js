@@ -19,11 +19,11 @@ const runPrime = () => {
         const checkOnRemains = (num) => num % i !== 0;
         result = (checkOnRemains(n) === true) ? 'yes' : 'no';
         if (result === 'no') {
-        return result;
+          return result;
         }
       }
       return result;
-    };
+    }
     answer.push(primeNumber(getNumber));
     const resultQuestion = `Question: ${getNumber}`;
     return resultQuestion;

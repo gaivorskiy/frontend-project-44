@@ -24,7 +24,7 @@ const runProgression = () => {
     const correctResult = massProgression[getRandomDots];
     let mass = '';
     for (let i = 0; i < massProgression.length; i += 1) {
-      const replacingWithDots = (i !== getRandomDots) ? mass += ` ${massProgression[i]}` : mass += ' ..';
+      mass = (i !== getRandomDots) ? mass += ` ${massProgression[i]}` : mass += ' ..';
     }
     answer.push(String(correctResult));
     const getThisQuestion = `Question:${mass}`;
