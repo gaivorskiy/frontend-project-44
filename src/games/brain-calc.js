@@ -16,7 +16,7 @@ const runCalc = () => {
     };
     const resultMathOperation = mathOperation[getMathOperator];
     answer.push(String(resultMathOperation));
-    const resultQuestion = `${number1} ${getMathOperator} ${number2}`;
+    const resultQuestion = `Question: ${number1} ${getMathOperator} ${number2}`;
     return resultQuestion;
   };
   const description = 'What is the result of the expression?';
